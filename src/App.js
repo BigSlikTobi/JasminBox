@@ -3,7 +3,7 @@ import './App.css';
 import React, {Component} from "react";
 
 let defaultStyle = {
-  color: "black"
+  color: "white"
 }
 
 class Aggregate extends Component {
@@ -40,8 +40,7 @@ class Playlists extends Component {
 }
 
 function App() {
-  let name= "Tobi"
-  let color= "green"
+
   return (
     <div className="App">
       <h1>Title</h1>
