@@ -42,7 +42,8 @@ class Playlists extends Component {
 function App() {
 
   return (
-    <div className="App">
+
+    <div className="App" style={{"background-color":"grey"}}>
       <h1>Title</h1>
       <Aggregate/>
       <Aggregate/>
