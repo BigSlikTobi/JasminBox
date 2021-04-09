@@ -2,9 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import React, {Component} from "react";
 
+//added white as default text color
 let defaultStyle = {
-  color: "white"
+  color: "white",
 };
+
+//set fake server data to simulize a data source
 let fakeServerData = {
   user: {
     name: "Jasmin",
@@ -45,6 +48,7 @@ let fakeServerData = {
   }
 };
 
+//Counter of how much playlists are within the fakeServerData
 class PlaylistCounter extends Component {
   render () {
     return (
@@ -55,7 +59,8 @@ class PlaylistCounter extends Component {
     );
   }
 }
-class HourCounter extends Component {
+//Counter of minutes of all playlists
+class MinutesCounter extends Component {
   render () {
     let allSongs = this.props.playlists.reduce((songs, eachPlaylist) => {
       return songs.concat(eachPlaylist.songs)
@@ -81,6 +86,7 @@ class Filter extends Component {
     </div>
   );
 }}
+//Playlist
 class Playlists extends Component {
   render ()
   {
@@ -91,7 +97,7 @@ class Playlists extends Component {
       <h3>{playlist.name}</h3>
       <ul>
       {playlist.songs.map(song => 
-        <li>{song.name}</li>)}
+        <li>{song.name} {((song.duration/60).toFixed(2))} Min</li>)}
         </ul>
     </div>
   )
@@ -105,11 +111,11 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => {  
     this.setState({serverData: fakeServerData});
-  },1000);}
+  },500);}
   render() {
   return (
 
-    <div className="App" style={{"background-color":"grey"}}>
+    <div className="App" style={{...defaultStyle, padding:"10px"}}>
       {this.state.serverData.user ?
       <div>
       <h1>{this.state.serverData.user.name}'s Box</h1>
@@ -117,7 +123,7 @@ class App extends Component {
       <PlaylistCounter playlists={this.state.serverData.user && 
                     this.state.serverData.user.playlists}/>
 
-      <HourCounter playlists={this.state.serverData.user && 
+      <MinutesCounter playlists={this.state.serverData.user && 
                     this.state.serverData.user.playlists}/>
 
       <Filter/>
