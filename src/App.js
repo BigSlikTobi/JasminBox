@@ -173,6 +173,7 @@ class App extends Component {
       {
         this.state.serverData.user.playlists.map(playlist => 
           <Playlists playlist={playlist}/>)}
+          
       </div> : <h1>Loading</h1>
       }
     
