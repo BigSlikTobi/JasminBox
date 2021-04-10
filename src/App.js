@@ -107,7 +107,7 @@ class Playlists extends Component {
 }
 
 //Carousel Test 
-class Carousel extends Component {
+class MyCarousel extends Component {
   constructor () {
     super()
     this.state = {value: 0};
@@ -123,7 +123,7 @@ class Carousel extends Component {
         <input type="number" value={this.state.value}
         onChange={e => this.onChange(parseInt(e.target.value || 0))}
         />
-        <Carousel value={this.state.value} onChange={this.onChange}
+        <MyCarousel value={this.state.value} onChange={this.onChange}
         slides={
           [
             (<img src={"https://onma.de/wp-content/uploads/2016/12/Grafik-1URL2.jpg"}/>)
@@ -167,7 +167,7 @@ class App extends Component {
       <MinutesCounter playlists={this.state.serverData.user && 
                     this.state.serverData.user.playlists}/>
 
-      <Carousel/>
+      <MYCarousel/>
 
       <Filter/>
       {
