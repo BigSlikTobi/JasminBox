@@ -1,0 +1,390 @@
+{
+   "v":"A",
+   "id":"2021-03-11T00:23:25_51701042",
+   "src":"AVRO",
+   "t":1615419587,
+   "ttl":0,
+   "data":{
+      "kind":"https://github.com/fielmann-ag/ea/blob/main/avbf-connector/auftrag-schema-v1.json",
+      "data":{
+         "id":51701042,
+         "anr":"2870376",
+         "anzBohrungen":0,
+         "artikelBezeichnung":"LD 016 FLEX CL",
+         "artnr":"0021340",
+         "azg":19,
+         "bestellNdl":"0491",
+         "boxId":"611497",
+         "datBelegEingang":"2021-03-10T15:49:29",
+         "datEingang":"2021-03-01T18:43:35",
+         "datKundenwunsch":"2021-03-15T00:00:00",
+         "datLtermin":"2021-03-12T00:00:00",
+         "datNdlAnnahme":"2021-03-01T00:00:00",
+         "dm1":65,
+         "dm2":70,
+         "eshBis":99,
+         "eshVon":20,
+         "farbe":"LITR",
+         "festeFormenKnz":"J",
+         "festeFormenMeiKnz":"N",
+         "fssUebertragenAm":"2021-03-11T00:09:18.740+00:00",
+         "fsw":7,
+         "geaendertAm":"2021-03-11T00:23:25",
+         "geaendertVon":"SYSJCS",
+         "glasBezFlag":"N",
+         "glasbestFofKnz":"J",
+         "glasbez":"RACUVARIO POL IP 65/70  SHC  GR 85",
+         "groesse":"51-19",
+         "herstFarbe":"FM376",
+         "ink":7,
+         "kollektion":"VER",
+         "lagerKnz":"N",
+         "lfdNr":1,
+         "lterminFlag":"J",
+         "manuellKnz":"N",
+         "mg":"N",
+         "ndl":"0491",
+         "pulzId":"1010491287037633",
+         "remoteEdgingKnz":"J",
+         "sapTransfer":"N",
+         "sh":45,
+         "sl":51,
+         "stornoKnz":"N",
+         "toeProz":85,
+         "vdm":70,
+         "artikel":{
+            "id":61278,
+            "artikelBezeichnung":"LD 016 FLEX CL",
+            "artnr":"0021340",
+            "farbe":"LITR",
+            "fkIsoccId":17,
+            "groesse":"51-19",
+            "herstFarbe":"FM376",
+            "kollektion":"VER",
+            "kzprod":"FA",
+            "prserf":"N",
+            "warengruppe":"111",
+            "wgArten":"Korr.fassung",
+            "wgMaterial":"Kunststoff/Acetat",
+            "wgSex":"Damen",
+            "ziErscheinung":"Rund",
+            "ziRandlo":"Sonstige"
+         },
+         "auftragsorte":"Endkontrolle",
+         "fertAuftragsarten":{
+            "id":47,
+            "arAutomaten":"A+R Mehrstärken",
+            "einlastungsgruppen":"Kunststoff-Fsg.",
+            "fsgKriterien":"Kunststoff",
+            "glasBeschaffenheiten":"Kunststoff",
+            "schleifbereiche":"automatisch"
+         },
+         "glasFarben":"Grau",
+         "glasKatR":"Gleitsicht",
+         "glasKatL":"Gleitsicht",
+         "glasKlassen":"Standard",
+         "glasMaterialR":"Kunststoff",
+         "glasMaterialL":"Kunststoff",
+         "glasMaterial":"Kunststoff",
+         "glasStaerke":"Gleitsicht",
+         "glasStaerkeR":"Gleitsicht",
+         "glasStaerkeL":"Gleitsicht",
+         "glasToenungL":"Farblos",
+         "glasToenungR":"Farblos",
+         "glasToenung":"POL-Filter",
+         "glasVergue1":"Superentspiegelung Hard Clean",
+         "lieferant":{
+            "id":14,
+            "glasbestVersion":"5.0",
+            "kplFlag":"N",
+            "kundennummer":"2010640",
+            "lfdNr":105348,
+            "lieferadresse":0,
+            "liefertFsg":"0",
+            "liefertGlas":"2",
+            "name1":"RO - Rathenower Optik",
+            "nummer":4,
+            "pauschaleGlasgutschrift":"J",
+            "samstagarbeitFlag":"N",
+            "standardlieferzeit":3,
+            "strasse":"An den Flugzeughallen",
+            "zollKrz":"O",
+            "anreden":"Firma",
+            "id":55576,
+            "ort":"Rathenow",
+            "plz":"14712",
+            "id":44,
+            "nation":"Deutschland",
+            "bundesland":"Brandenburg"
+         },
+         "pulzAuftragsart":"Remote-Edging-Auftrag",
+         "status":"Auftrag fertig",
+         "statusKat":"Produktion",
+         "waehrungen":"Euro",
+         "auftraegeFaktReklas":[
+            
+         ],
+         "auftragsarten":[
+            {
+               "id":11,
+               "auftragsart":"Fernrandung"
+            },
+            {
+               "id":1,
+               "auftragsart":"Standard"
+            }
+         ],
+         "auftragKplFaktDaten":[
+            
+         ],
+         "auftragZusatz":[
+            {
+               "id":50525226,
+               "bversFsgLeist":0,
+               "bversLGlasLeist":0,
+               "bversRGlasLeist":0,
+               "datProd":"2021-03-12T00:00:00",
+               "etuiAusNdlKnz":"N",
+               "etuiKnz":"N",
+               "fassungAusRetoure":"N",
+               "fassungstyp":"002",
+               "firstPulzaartId":4,
+               "formdatenKnz":"N",
+               "jvKnz":"N",
+               "kdAnrede":"X",
+               "kdGebDat":"1955-10-27T00:00:00",
+               "kdName":"X",
+               "kdVorname":"X",
+               "kindKnz":"N",
+               "kkNr":0,
+               "kundeneigeneFassung":"N",
+               "mehrstaerkenKnz":"J",
+               "racerKnz":"J",
+               "rechnungKnz":"0",
+               "remotefaehigKnz":"J",
+               "tbaKnz":"J",
+               "tbaMussKnz":"N",
+               "tbaRandungKnz":"J",
+               "ubzKnz":"N",
+               "versDatBeginn":"2021-03-01T00:00:00",
+               "versPoliceNr":"009961996160",
+               "versTarif":"M",
+               "mspSprache":"deutsch"
+            }
+         ],
+         "bestpos":[
+            {
+               "id":53425038,
+               "anr":"2870376",
+               "anzMahn":0,
+               "art":"S",
+               "artikelnummer":"0021340",
+               "azg":19,
+               "bestposType":"BESTPOSGL",
+               "datErstellt":"2021-03-01T22:02:10",
+               "datKundenwunsch":"2021-03-15T00:00:00",
+               "datLief":"2021-03-10T15:49:28",
+               "datLtermin":"2021-03-05T00:00:00",
+               "datProdBf":"2021-03-12T00:00:00",
+               "dfueFlag":"J",
+               "durchmesser":"6570",
+               "einlastgrp":"5",
+               "eshBis":99,
+               "eshVon":20,
+               "farbe":"GR",
+               "farbstaerke":"85",
+               "fsw":7,
+               "glasbez":"RACUVARIO POL IP 65/70  SHC  GR 85",
+               "ink":7,
+               "label":"1010491287037633",
+               "material":"CR",
+               "mg":"N",
+               "nachschubFlag":"N",
+               "pulzaart":"4",
+               "rlKz":"B",
+               "sh":45,
+               "sl":51,
+               "staerke":"GL",
+               "toenung":"POL",
+               "vg1":"SHC",
+               "zusatztext":"bitte mit GM",
+               "bestellstatus":"Lieferung erfolgt",
+               "bestKoepfe":{
+                  "id":19444791,
+                  "bestellKnz":"0",
+                  "datErst":"2021-03-01T18:11:40",
+                  "dfueKnz":"J",
+                  "erstelltFlag":"A",
+                  "glasbestVersion":"5.0",
+                  "kundennummer":"1010491",
+                  "lfdNr":105112,
+                  "ndl":"0491",
+                  "lieferant":{
+                     "id":14,
+                     "glasbestVersion":"5.0",
+                     "kplFlag":"N",
+                     "kundennummer":"2010640",
+                     "lfdNr":105348,
+                     "lieferadresse":0,
+                     "liefertFsg":"0",
+                     "liefertGlas":"2",
+                     "name1":"RO - Rathenower Optik",
+                     "nummer":4,
+                     "pauschaleGlasgutschrift":"J",
+                     "samstagarbeitFlag":"N",
+                     "standardlieferzeit":3,
+                     "strasse":"An den Flugzeughallen",
+                     "zollKrz":"O",
+                     "anreden":"Firma",
+                     "id":55576,
+                     "ort":"Rathenow",
+                     "plz":"14712",
+                     "id":44,
+                     "nation":"Deutschland",
+                     "bundesland":"Brandenburg"
+                  }
+               },
+               "lachse":20,
+               "ladd":2.25,
+               "lcyl":0.5,
+               "lhsa":11,
+               "lnth":27,
+               "lsph":1.75,
+               "rachse":143,
+               "radd":2.25,
+               "rcyl":0.5,
+               "rhsa":11,
+               "rnth":27.5,
+               "rsph":2.25,
+               "lpd":29.5,
+               "rpd":30
+            }
+         ],
+         "extfertAuftraeges":[
+            
+         ],
+         "extfertRueckmlds":[
+            
+         ],
+         "glasMessergebnisses":[
+            
+         ],
+         "pvsHists":[
+            
+         ],
+         "historieStatus":[
+            {
+               "id":832066264,
+               "angelegtAm":"2021-03-01T18:43:35",
+               "auftragsorte":"Auftragseingang",
+               "status":"Warte auf NDL-Fassungseingang"
+            },
+            {
+               "id":832066266,
+               "angelegtAm":"2021-03-01T18:43:35",
+               "auftragsorte":"Auftragseingang",
+               "status":"Warte auf Glaseingang"
+            },
+            {
+               "id":832066263,
+               "angelegtAm":"2021-03-01T18:43:35",
+               "auftragsorte":"Auftragseingang",
+               "status":"Initialisierung"
+            },
+            {
+               "id":832066265,
+               "angelegtAm":"2021-03-01T18:43:35",
+               "auftragsorte":"Wareneingang",
+               "status":"Fassung geliefert"
+            },
+            {
+               "id":832103146,
+               "angelegtAm":"2021-03-01T22:02:10",
+               "glasKnz":"B",
+               "auftragsorte":"Bestellung",
+               "status":"Glas bestellt"
+            },
+            {
+               "id":833667554,
+               "angelegtAm":"2021-03-10T15:49:29",
+               "auftragsorte":"Wareneingang",
+               "status":"Glas geliefert"
+            },
+            {
+               "id":833667555,
+               "angelegtAm":"2021-03-10T15:49:29",
+               "auftragsorte":"Wareneingang",
+               "status":"Glas + Fassung liegen vor"
+            },
+            {
+               "id":833670639,
+               "angelegtAm":"2021-03-10T16:04:02",
+               "auftragsorte":"Werkstatt",
+               "status":"Auftrag an MFR übergeben"
+            },
+            {
+               "id":833672383,
+               "angelegtAm":"2021-03-10T16:09:00",
+               "auftragsorte":"Werkstatt",
+               "status":"Auftrag zum Schleifen bereit"
+            },
+            {
+               "id":833673199,
+               "angelegtAm":"2021-03-10T16:16:19",
+               "auftragsorte":"Werkstatt",
+               "status":"Auft. zur Endkontrolle fertig"
+            },
+            {
+               "id":833766738,
+               "angelegtAm":"2021-03-11T00:23:25",
+               "auftragsorte":"Endkontrolle",
+               "status":"Auftrag fertig"
+            }
+         ],
+         "rsListens":[
+            
+         ],
+         "zusatztextes":[
+            {
+               "id":18186899,
+               "angelegtAm":"2021-03-01T18:43:35",
+               "text":"bitte mit GM",
+               "texttypen":"Zusatzinfo für Glasbestellung"
+            }
+         ],
+         "lieferantenGlaslager":[
+            
+         ],
+         "lieferantenMesswerte":[
+            
+         ],
+         "pulzRsListen":[
+            
+         ],
+         "reklaRechnungen":[
+            
+         ],
+         "rsPufferListeHist":[
+            
+         ],
+         "lachse":20,
+         "ladd":2.25,
+         "lbestFlag":"J",
+         "lcyl":0.5,
+         "ldfueFlag":"J",
+         "lhsa":11,
+         "lnth":27,
+         "lpdNeu":29.5,
+         "lsph":1.75,
+         "rachse":143,
+         "radd":2.25,
+         "rbestFlag":"J",
+         "rcyl":0.5,
+         "rdfueFlag":"J",
+         "rhsa":11,
+         "rnth":27.5,
+         "rpdNeu":30,
+         "rsph":2.25
+      }
+   }
+}
