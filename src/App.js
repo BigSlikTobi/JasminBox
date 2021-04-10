@@ -129,7 +129,7 @@ class App extends Component {
       <Filter/>
       {
         this.state.serverData.user.playlists.map(playlist => 
-          <Playlists playlist={playlist}/>)}
+          <Playlists^^^^^^^^^^^^^^^^^   playlist={playlist}/>)}
       </div> : <h1>Loading</h1>
       }
     </div>
