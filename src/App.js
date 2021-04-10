@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {Component} from "react";
+import Carousel, { Dots } from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
 
 //added white as default text color
 let defaultStyle = {
@@ -103,6 +105,45 @@ class Playlists extends Component {
   )
   }
 }
+
+//Carousel Test 
+class Carousel extends Component {
+  constructor () {
+    super()
+    this.state = {value: 0};
+    this.onChange = this.onChange.blind(this);
+  }
+  onChange(value) {
+    this.setState({ value });
+  }
+
+  render() {
+    return(
+      <div>
+        <input type="number" value={this.state.value}
+        onChange={e => this.onChange(parseInt(e.target.value || 0))}
+        />
+        <Carousel value={this.state.value} onChange={this.onChange}
+        slides={
+          [
+            (<img src={"https://onma.de/wp-content/uploads/2016/12/Grafik-1URL2.jpg"}/>)
+            (<img src={"https://onma.de/wp-content/uploads/2016/12/Grafik-1URL2.jpg"}/>)
+            (<img src={"https://onma.de/wp-content/uploads/2016/12/Grafik-1URL2.jpg"}/>)
+
+          ]}
+
+          plugins={[
+            "arrows",
+            "clickToChange"
+          ]}/>
+      </div>
+    )
+  }
+
+
+
+
+}
 class App extends Component {
   constructor() {
     super();
@@ -126,12 +167,15 @@ class App extends Component {
       <MinutesCounter playlists={this.state.serverData.user && 
                     this.state.serverData.user.playlists}/>
 
+      <Carousel/>
+
       <Filter/>
       {
         this.state.serverData.user.playlists.map(playlist => 
           <Playlists^^^^^^^^^^^^^^^^^   playlist={playlist}/>)}
       </div> : <h1>Loading</h1>
       }
+    
     </div>
   )
 }}
