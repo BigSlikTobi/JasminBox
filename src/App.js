@@ -4,30 +4,6 @@ import React, {Component} from "react";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
-
-//test carousel
- class Carousel extends React.Component {
-  render() {
-    return (
-      <CarouselProvider
-        naturalSlideWidth={100}
-        naturalSlideHeight={125}
-        totalSlides={3}
-      >
-         <Slider>
-          <Slide index={0}>I am the first Slide.</Slide>
-          <Slide index={1}>I am the second Slide.</Slide>
-          <Slide index={2}>I am the third Slide.</Slide>
-        </Slider>
-
-        <ButtonBack>Back</ButtonBack>
-        <ButtonNext>Next</ButtonNext>
-
-      </CarouselProvider>
-    );
-  }
-}
-
 //added white as default text color
 let defaultStyle = {
   color: "white",
@@ -107,7 +83,8 @@ class Filter extends Component {
   return(
     <div>
       <img/>
-      <input type="text" style={{margin:"10px"}}/>
+      <input type="text" style={{margin:"10px"}} 
+        onKeyUp={event => this.props.onTextChange(event.target.value)}/>
       Filter
     </div>
   );
@@ -129,16 +106,46 @@ class Playlists extends Component {
   )
   }
 }
+
+//test carousel
+class Carousel extends React.Component {
+  render() {
+    return (
+      <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={125}
+        totalSlides={3}
+      >
+         <Slider>
+          <Slide index={0}>I am the first Slide.</Slide>
+          <Slide index={1}>I am the second Slide.</Slide>
+          <Slide index={2}>I am the third Slide.</Slide>
+        </Slider>
+
+        <ButtonBack>Back</ButtonBack>
+        <ButtonNext>Next</ButtonNext>
+
+      </CarouselProvider>
+    );
+  }
+}
+
 class App extends Component {
   constructor() {
     super();
-    this.state = {serverData: {}}
+    this.state = {
+      serverData: {},
+      filterString: ""
+    }
   }
   componentDidMount() {
     setTimeout(() => {  
     this.setState({serverData: fakeServerData});
-  },500);}
+  },500);
+}
+
   render() {
+
   return (
 
     <div className="App" style={{...defaultStyle, padding:"10px"}}>
@@ -152,10 +159,13 @@ class App extends Component {
       <MinutesCounter playlists={this.state.serverData.user && 
                     this.state.serverData.user.playlists}/>
 
-      <Filter/>
+      <Filter onTextChange={text => this.setState({filterString: text})}/>
 
       {
-        this.state.serverData.user.playlists.map(playlist => 
+        this.state.serverData.user.playlists.filter(
+          playlist => playlist.name.toLowerCase().includes(
+            this.state.filterString.toLowerCase())
+        ).map(playlist => 
         <Playlists playlist={playlist}/>)}
 
       </div> : <h1>Loading</h1>
