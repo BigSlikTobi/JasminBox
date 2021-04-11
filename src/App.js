@@ -1,8 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {Component} from "react";
-import Carousel, { Dots } from "@brainhubeu/react-carousel";
-import "@brainhubeu/react-carousel/lib/style.css";
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+
+
+//test carousel
+ class Carousel extends React.Component {
+  render() {
+    return (
+      <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={125}
+        totalSlides={3}
+      >
+         <Slider>
+          <Slide index={0}>I am the first Slide.</Slide>
+          <Slide index={1}>I am the second Slide.</Slide>
+          <Slide index={2}>I am the third Slide.</Slide>
+        </Slider>
+
+        <ButtonBack>Back</ButtonBack>
+        <ButtonNext>Next</ButtonNext>
+
+      </CarouselProvider>
+    );
+  }
+}
 
 //added white as default text color
 let defaultStyle = {
@@ -105,45 +129,6 @@ class Playlists extends Component {
   )
   }
 }
-
-//Carousel Test 
-class MyCarousel extends Component {
-  constructor () {
-    super()
-    this.state = {value: 0};
-    this.onChange = this.onChange.blind(this);
-  }
-  onChange(value) {
-    this.setState({ value });
-  }
-
-  render() {
-    return(
-      <div>
-        <input type="number" value={this.state.value}
-        onChange={e => this.onChange(parseInt(e.target.value || 0))}
-        />
-        <MyCarousel value={this.state.value} onChange={this.onChange}
-        slides={
-          [
-            (<img src={"https://onma.de/wp-content/uploads/2016/12/Grafik-1URL2.jpg"}/>)
-            (<img src={"https://onma.de/wp-content/uploads/2016/12/Grafik-1URL2.jpg"}/>)
-            (<img src={"https://onma.de/wp-content/uploads/2016/12/Grafik-1URL2.jpg"}/>)
-
-          ]}
-
-          plugins={[
-            "arrows",
-            "clickToChange"
-          ]}/>
-      </div>
-    )
-  }
-
-
-
-
-}
 class App extends Component {
   constructor() {
     super();
@@ -167,15 +152,18 @@ class App extends Component {
       <MinutesCounter playlists={this.state.serverData.user && 
                     this.state.serverData.user.playlists}/>
 
-      <MYCarousel/>
-
       <Filter/>
+
       {
         this.state.serverData.user.playlists.map(playlist => 
-          <Playlists^^^^^^^^^^^^^^^^^   playlist={playlist}/>)}
+        <Playlists playlist={playlist}/>)}
+
       </div> : <h1>Loading</h1>
       }
-    
+
+
+<Carousel/>
+
     </div>
   )
 }}
