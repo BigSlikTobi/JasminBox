@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {Component} from "react";
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+//import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+//import 'pure-react-carousel/dist/react-carousel.es.css';
 
 //added white as default text color
 let defaultStyle = {
@@ -44,6 +44,14 @@ let fakeServerData = {
         songs: [{name: "Title1", duration: 510},
                 {name: "Title2", duration: 270},
                 {name: "Title3", duration: 180},
+                {name: "Test", duration: 210}]
+      },
+      {
+        name: "Conni2",
+        episodes: "50",
+        songs: [{name: "Title1", duration: 510},
+                {name: "Title2", duration: 270},
+                {name: "Title3", duration: 10},
                 {name: "Test", duration: 210}]
       },
     ]
@@ -95,7 +103,7 @@ class Playlists extends Component {
   {
     let playlist = this.props.playlist
   return(
-    <div style={{...defaultStyle, width: "25%", display: "inline-block"}}>
+    <div style={{...defaultStyle, width: "20%", display: "inline-block"}}>
       <img/>
       <h3>{playlist.name}</h3>
       <ul>
@@ -108,7 +116,7 @@ class Playlists extends Component {
 }
 
 //test carousel
-class Carousel extends React.Component {
+{/*class Carousel extends React.Component {
   render() {
     return (
       <CarouselProvider
@@ -128,7 +136,7 @@ class Carousel extends React.Component {
       </CarouselProvider>
     );
   }
-}
+}*/}
 
 class App extends Component {
   constructor() {
@@ -170,7 +178,7 @@ class App extends Component {
       }
 
 
-<Carousel/>
+{/*<Carousel/>*/}
 
     </div>
   )
