@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {Component} from "react";
+import queryString from "query-string";
 //import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 //import 'pure-react-carousel/dist/react-carousel.es.css';
 
@@ -21,39 +22,8 @@ let fakeServerData = {
                 {name: "Title2", duration: 270},
                 {name: "Title3", duration: 180},
                 {name: "Title4", duration: 210}]
-      },
-      {
-        name: "Emmi von Candis",
-        episodes: "14",
-        songs: [{name: "Title1", duration: 110},
-                {name: "Title2", duration: 270},
-                {name: "Title3", duration: 180},
-                {name: "Title4", duration: 210}]
-      },
-      {
-        name: "Paw Patrol",
-        episodes: "25",
-        songs: [{name: "Title1", duration: 10},
-                {name: "Title2", duration: 270},
-                {name: "Title3", duration: 180},
-                {name: "Title4", duration: 210}]
-      },
-      {
-        name: "Conni",
-        episodes: "200",
-        songs: [{name: "Title1", duration: 510},
-                {name: "Title2", duration: 270},
-                {name: "Title3", duration: 180},
-                {name: "Test", duration: 210}]
-      },
-      {
-        name: "Conni2",
-        episodes: "50",
-        songs: [{name: "Title1", duration: 510},
-                {name: "Title2", duration: 270},
-                {name: "Title3", duration: 10},
-                {name: "Test", duration: 210}]
-      },
+      }
+      
     ]
   }
 };
@@ -116,7 +86,7 @@ class Playlists extends Component {
 }
 
 //test carousel
-{/*class Carousel extends React.Component {
+/*{class Carousel extends React.Component {
   render() {
     return (
       <CarouselProvider
@@ -136,7 +106,7 @@ class Playlists extends Component {
       </CarouselProvider>
     );
   }
-}*/}
+}}*/
 
 class App extends Component {
   constructor() {
@@ -147,34 +117,54 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    setTimeout(() => {  
-    this.setState({serverData: fakeServerData});
-  },500);
-}
+    let parsed  = queryString.parse(window.location.search);
+    let accessToken = parsed.access_token;
+    console.log(accessToken);
+    console.log(parsed);
+    
+    fetch("https://api.spotify.com/v1/me", {
+      headers: {"Authorization": "Bearer " + accessToken}
+    }).then(response => response.json())
+      //.then(data => console.log(data))
+      .then(data => this.setState({serverData: {user: {name: data.display_name}}}))
+  
+
+    fetch("https://api.spotify.com/v1/me/playlists", {
+      headers: {"Authorization": "Bearer " + accessToken}
+    }).then(response => response.json())
+        .then(data => console.log(data))
+
+  }
 
   render() {
-    let playlistToRender = this.state.serverData.user ? this.state.serverData.user.playlists
-    .filter(playlist => playlist.name.toLowerCase().includes(
-        this.state.filterString.toLowerCase())
-    ) : []
+    let playlistToRender = 
+    this.state.serverData.user && 
+    this.state.serverData.user.playlists 
+      ? this.state.serverData.user.playlists.filter(playlist => 
+        playlist.name.toLowerCase().includes(
+          this.state.filterString.toLowerCase())) 
+      : []
   return (
     
     <div className="App" style={{...defaultStyle, padding:"10px"}}>
       {this.state.serverData.user ?
       <div>
       <h1>{this.state.serverData.user.name}'s Box</h1>
-      
+ 
+    
       <PlaylistCounter playlists={playlistToRender}/>
 
       <MinutesCounter playlists={playlistToRender}/>
 
       <Filter onTextChange={text => this.setState({filterString: text})}/>
-
+  
       {
         playlistToRender.map(playlist => 
         <Playlists playlist={playlist}/>)}
 
-      </div> : <h1>Loading</h1>
+
+      </div> : <button onClick={()=>window.location="http:/localhost:8888/login"}
+      style={{padding: "10px", "font-size": "30px"}}>Sign In</button>
       }
 
 
